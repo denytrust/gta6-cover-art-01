@@ -1,0 +1,41 @@
+@font-face {
+  font-family: 'Anton';
+  src: url('./fonts/Anton-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+html, body { margin: 0; min-height: 100%; background: #12041f; color: #f2eef7; font: 15px/1.45 system-ui, sans-serif; }
+.app { display: flex; gap: 20px; align-items: flex-start; justify-content: center; padding: 20px; box-sizing: border-box; }
+.controls { display: flex; flex-direction: column; gap: 10px; width: 320px; flex: none; }
+.controls h1 { margin: 0; font-family: Anton, 'Arial Black', sans-serif; font-weight: 400; font-size: 28px; letter-spacing: 1px; background: linear-gradient(90deg, #ff9a3d, #ff2e88, #00e5ff); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.tagline { margin: 0; color: #b9a8cc; }
+fieldset { border: 1px solid #3a2350; border-radius: 10px; padding: 10px; margin: 0; display: flex; flex-direction: column; gap: 8px; }
+legend { font-weight: 700; color: #ffd94d; padding: 0 6px; }
+.row { display: flex; gap: 8px; align-items: center; }
+.row.wrap { flex-wrap: wrap; }
+.hint { margin: 0; font-size: 13px; color: #b9a8cc; }
+label { display: flex; flex-direction: column; gap: 6px; font-weight: 600; font-size: 14px; }
+input[type=text], select { font: inherit; padding: 8px; border: 1px solid #5a3d78; border-radius: 6px; background: #1d0b31; color: #f2eef7; }
+input[type=range] { width: 100%; accent-color: #ff2e88; }
+button { font: inherit; font-weight: 700; padding: 7px 8px; border: 1px solid #5a3d78; border-radius: 6px; background: #241040; color: #f2eef7; cursor: pointer; }
+.row button { font-size: 13px; }
+button:hover { border-color: #ff2e88; }
+button.active { background: #ff2e88; border-color: #ff2e88; color: #fff; }
+button.primary { background: linear-gradient(90deg, #ff2e88, #ff9a3d); border: 0; color: #fff; }
+.upload { cursor: pointer; }
+.upload input { display: none; }
+.panel-btn { font-size: 13px; }
+.stage { position: relative; flex: none; line-height: 0; }
+canvas#cover { width: min(72vh, 58vw); height: min(72vh, 58vw); box-shadow: 0 12px 40px rgba(0, 0, 0, 0.55); }
+canvas#overlay { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+#status { margin: 0; min-height: 1.2em; color: #7df9ff; font-size: 14px; }
+
+/* Screenshot mode: the cover alone, filling the window. */
+body.shot-cover { overflow: hidden; }
+body.shot-cover .controls { display: none; }
+body.shot-cover .app { padding: 0; }
+body.shot-cover .stage { line-height: 0; }
+body.shot-cover canvas#cover { width: 100vw; height: 100vh; box-shadow: none; }
+body.shot-cover canvas#overlay { display: none; }
